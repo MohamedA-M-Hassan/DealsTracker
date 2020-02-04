@@ -20,6 +20,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path(r'', views.index ,name='index',),
-    path(r'about_ejada/',include('deal_app.urls')),
+    path(r'deal_app/',include('deal_app.urls')),
     path('admin/', admin.site.urls),
 ]
