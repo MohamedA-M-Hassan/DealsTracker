@@ -20,8 +20,10 @@ from user_app import views
 from django.conf.urls import include
 
 urlpatterns = [
-    #path(r'', views.index ,name='index',),
+    path(r'', views.index ,name='index',),
     path(r'deal_app/',include('deal_app.urls')),
     path(r'user_app/',include('user_app.urls')),
     path('admin/', admin.site.urls),
+    path(r'sign_up/',views.sign_up,name='sign_up'),
+
 ]
