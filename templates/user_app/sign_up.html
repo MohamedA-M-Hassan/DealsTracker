@@ -3,50 +3,21 @@
 {% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
-    <style>
-    ul {
-      position: fixed;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-    }
 
-    li {
-      float: left;
-      border-right:1px solid #bbb;
-
-    }
-
-    li:last-child {
-      border-right: none;
-    }
-
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    li a:hover:not(.active) {
-      background-color: #111;
-    }
-
-    .active {
-      background-color: #4CAF50;
-    }
-    </style>
 
     <meta charset="utf-8">
     <title>my first page</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
   <body>
 
     <div class="container">
-        <h1> {{form}}  </h1>
+      <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Register">
+      </form>
     </div>
     </body>
 </html>
