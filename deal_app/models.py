@@ -17,7 +17,7 @@ class Customer(models.Model):
 class Deal(models.Model):
 
     name = models.CharField(max_length = 20)
-    creation_date =models.DateTimeField()
+    creation_date =models.DateField()
     date_lastupdated = models.DateField(auto_now=True)
     status = models.CharField(max_length = 20) ##in progress or win or loss
     status_descriptian = models.TextField()

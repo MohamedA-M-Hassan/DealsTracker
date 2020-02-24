@@ -1,0 +1,15 @@
+{% extends "basic.html"%}
+
+{% block body_block%}
+
+
+<div class="container">
+  <form method="POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" value="Add New Deal">
+  </form>
+</div>
+
+
+{% endblock%}
