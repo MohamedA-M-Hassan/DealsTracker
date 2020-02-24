@@ -10,3 +10,8 @@ def index(request):
     deals = Deal.objects.all()
     deals_dictionary = {'deals': deals}
     return render(request, 'deal_app/index.html', context=deals_dictionary)
+
+
+
+def main(request):
+    return render(request,'deal_app/main.html')

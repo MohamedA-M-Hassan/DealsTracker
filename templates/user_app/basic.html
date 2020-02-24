@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Base</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+.
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top navbar-expand-lg">
+
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li> <a class="navbar-brand" href="{%url 'index' %}"><strong>Ejada</strong> </a> </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'admin:index' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'deal_app:index' %}">Tableau Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'user_app:sign_up'%}">sign_up</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </nav>
+
+    <div class="container">
+      {%block body_block%}
+      {% endblock%}
+
+    </div>
+  </body>
+</html>
