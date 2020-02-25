@@ -3,7 +3,47 @@
 {% block body_block%}
 
 
-    <h1> welcome from Deal app main</h1>
+    <h6> welcome from Deal app main</h6>
+    <a  href="{%url "deal_app:new_deal"%}}">Add New</a>
+<div class="container">
 
 
+    <table class="table table-dark">
+      <thead>
+        <tr>
+
+            <th>customer</th>
+            <th>creation_date</th>
+            <th>date_lastupdated</th>
+            <th>status</th>
+            <th>status_descriptian</th>
+            <th>deal_source</th>
+            <th>third_party</th>
+            <th>project</th>
+            <th>margin_type</th>
+            <th>new_renew</th>
+            <th>sub_perpcual</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for deal in deals %}
+        <tr>
+
+            <td>{{ deal.customer }}</td>
+            <td>{{ deal.creation_date }}</td>
+            <td>{{ deal.date_lastupdated }}</td>
+            <td>{{ deal.status }}</td>
+            <td>{{ deal.status_descriptian }}</td>
+            <td>{{ deal.deal_source }}</td>
+            <td>{{ deal.third_party }}</td>
+            <td>{{ deal.project }}</td>
+            <td>{{ deal.margin_type }}</td>
+            <td>{{ deal.new_renew }}</td>
+            <td>{{ deal.sub_perpcual }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
 {% endblock%}

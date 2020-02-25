@@ -15,7 +15,9 @@ def index(request):
 
 
 def main(request):
-    return render(request,'deal_app/main.html')
+    deals = Deal.objects.all()
+    deals_dictionary = {'deals': deals}
+    return render(request,'deal_app/main.html', context=deals_dictionary)
 
 
 def booky(request):
