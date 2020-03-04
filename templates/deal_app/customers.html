@@ -1,0 +1,22 @@
+{% extends "basic.html"%}
+
+{% block body_block%}
+
+
+<div class="container">
+  <form method="POST">
+    <h3>to do list:</h3>
+      <h4>Analysis for each customers</h4>
+      <h5>- Customer name</h5>
+      <h5>- Numebr of deals</h5>
+      <h5>- Total amount customer paid</h5>
+      <h5>- Total profit</h5>
+    {%for customer in customers%}
+        {{customer.name}}
+        {{deal.name.number_of_deals}}
+    {%endfor%}
+  </form>
+</div>
+
+
+{% endblock%}

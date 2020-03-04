@@ -24,7 +24,9 @@ urlpatterns = [
     path(r'deal_app/',include('deal_app.urls')),
     path(r'user_app/',include('user_app.urls')),
     path('admin/', admin.site.urls),
-    path(r'sign_up/',user_app_views.sign_up,name='sign_up'),
-##    path(r'sign_up/',user_app_views.sign_up,name='sign_up'),
+    path(r'logout/',user_app_views.user_logout,name='logout'),
+    path(r'special/',user_app_views.special,name='special'),
 
+## there is two way to create links
+    path(r'sign_up/',user_app_views.sign_up,name='sign_up'),
 ]

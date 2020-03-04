@@ -1,36 +1,42 @@
 {% extends "basic.html"%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 {% block body_block%}
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <h6> welcome from Deal app main</h6>
-    <a  href="{%url "deal_app:new_deal"%}}">Add New</a>
+    <div class="container">
+      <input type="submit" class="btn btn-primary" value="Register">
+      <a  href="{%url "deal_app:customers"%}}">Our Customers</a>
+      <a  href="{%url "deal_app:new_deal"%}}">Add New</a>
+      <a  href="{%url "deal_app:customers_submission"%}}">Customer can submit his request </a>
+    </div>
+
 <div class="container">
 
 
-    <table class="table table-dark">
-      <thead>
+    <table class="table table-striped table-dark">
+      <thead  class="thead-dark">
         <tr>
 
-            <th>customer</th>
-            <th>creation_date</th>
-            <th>date_lastupdated</th>
-            <th>status</th>
-            <th>status_descriptian</th>
-            <th>deal_source</th>
-            <th>third_party</th>
-            <th>project</th>
-            <th>margin_type</th>
-            <th>new_renew</th>
-            <th>sub_perpcual</th>
+            <th scope="col">customer</th>
+            <th scope="col">creation_date</th>
+            <th scope="col">date_lastupdated</th>
+            <th scope="col">status</th>
+            <th scope="col">status_descriptian</th>
+            <th scope="col">deal_source</th>
+            <th scope="col">third_party</th>
+            <th scope="col">project</th>
+            <th scope="col">margin_type</th>
+            <th scope="col">new_renew</th>
+            <th scope="col">sub_perpcual</th>
 
         </tr>
       </thead>
       <tbody>
         {% for deal in deals %}
         <tr>
-
-            <td>{{ deal.customer }}</td>
+            <td><a  href="#">{{ deal.customer }}</a></td>
             <td>{{ deal.creation_date }}</td>
             <td>{{ deal.date_lastupdated }}</td>
             <td>{{ deal.status }}</td>

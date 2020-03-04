@@ -20,8 +20,10 @@ def main(request):
     return render(request,'deal_app/main.html', context=deals_dictionary)
 
 
-def booky(request):
-    return render(request,'deal_app/booky.html')
+def customers(request):
+    customers = Customer.objects.raw('select * from deal_app_customer')
+    number_of_deals = Deal.objects.raw('select count(id) from deal_app_deal group_by name')
+    return render(request,'deal_app/customers.html',context = {'customers':customers,'number_of_deals':number_of_deals})
 
 
 
@@ -40,3 +42,19 @@ def new_deal(request):
         else:
             print('error in view.py deal_app')
     return render(request, 'deal_app/add_new_deal.html', {'form':form})
+
+
+## the page that the customer can submit his requiest by himself to send him the quotation automatic
+def customer_submit_his_deal(request):
+
+    #form = forms.User_Form()
+    form = Deal_Form()
+    if request.method == 'POST':
+        form = Deal_Form(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return main(request)
+        else:
+            print('error in view.py deal_app')
+    return render(request, 'deal_app/first_step_customer_submit_his_deal.html', {'form':form})
